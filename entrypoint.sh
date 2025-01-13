@@ -11,7 +11,8 @@ disable_notification=$7
 
 response=$(curl -X POST "https://api.telegram.org/bot$token_id/sendMessage" \
 -H 'Content-Type: application/json' \
--d "{\"chat_id\": \"$chat_id\",\"message_thread_id\":\"$topic\" \"text\": \"$message\", \"parse_mode\": \"$parse_mode\", \"disable_web_page_preview\": \"$disable_web_page_preview\", \"disable_notification\": \"$disable_notification\"}")
+-d "{\"chat_id\": \"$chat_id\",\"message_thread_id\":\"$topic\", \"text\": \"$message\", \"parse_mode\": \"$parse_mode\", \"disable_web_page_preview\": \"$disable_web_page_preview\", \"disable_notification\": \"$disable_notification\"}")
+
 
 
 echo "response=$response" >> $GITHUB_OUTPUT
