@@ -8,7 +8,6 @@ parse_mode=$5
 disable_web_page_preview=$6
 disable_notification=$7
 
-# Include the topic in the message
 
 response=$(curl -X POST "https://api.telegram.org/bot$token_id/sendMessage" \
 -H 'Content-Type: application/json' \
