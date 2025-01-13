@@ -6,8 +6,11 @@ inputs:
   bot-token-id:
     description: Bot token ID
     required: true
-  chat-id: 
+  chat-id:
     description: Unique identifier for the target chat or username
+    required: true
+  topic:
+    description: Topic of the message (fetched from secrets)
     required: true
   text:
     description: Text of the message to be sent
@@ -32,8 +35,9 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.bot-token-id }}
-    - ${{ inputs.chat-id }} 
-    - ${{ inputs.text }} 
-    - ${{ inputs.parse-mode }} 
-    - ${{ inputs.disable-web-page-preview }} 
+    - ${{ inputs.chat-id }}
+    - ${{ secrets.TELEGRAM_TOPIC }}
+    - ${{ inputs.text }}
+    - ${{ inputs.parse-mode }}
+    - ${{ inputs.disable-web-page-preview }}
     - ${{ inputs.disable-notification }}
