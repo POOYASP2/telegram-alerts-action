@@ -36,7 +36,7 @@ runs:
   args:
     - ${{ inputs.bot-token-id }}
     - ${{ inputs.chat-id }}
-    - ${{ secrets.TELEGRAM_TOPIC }}
+    - ${{ inputs.topic }}
     - ${{ inputs.text }}
     - ${{ inputs.parse-mode }}
     - ${{ inputs.disable-web-page-preview }}
